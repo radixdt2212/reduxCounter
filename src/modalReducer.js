@@ -1,25 +1,22 @@
 import { MODAL_OPEN, MODAL_CLOSE } from "./actions";
-const defaultState = {
+
+const defaultSate = {
   isOpen: false,
   name: "",
-  text: "",
+  text: ""
 };
 
-export default function reducer(state = defaultState, action) {
+export default function modalReducer(state = defaultSate, action) {
   if (action.type === MODAL_OPEN) {
     return {
       ...state,
       isOpen: true,
       name: action.payload.name,
-      text: action.payload.text,
+      text: action.payload.text
     };
-  } else if (action.type === MODAL_CLOSE) {
-    return {
-      ...state,
-      isOpen: false,
-      name: "",
-      text: "",
-    };
+  }
+  if (action.type === MODAL_CLOSE) {
+    return { ...state, isOpen: false, name: "", text: "" };
   }
   return state;
 }

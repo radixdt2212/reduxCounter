@@ -176,13 +176,27 @@ Products
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 4rem;
+  transition: all 0.2s ease-in;
 }
 .product {
+  border: 1rem double #93e0fb;
+  padding: 0.5rem;
+  border-radius: 20px;
   text-align: center;
 }
+
 .product img {
   width: 100%;
 }
+
+.products li:hover {
+  transition: all 0.2s ease-in;
+  padding: 0.5rem;
+  -webkit-box-shadow: var(--lightShadow);
+  -moz-box-shadow: var(--lightShadow); /* Firefox 3.5 - 3.6 */
+  box-shadow: var(--lightShadow);
+}
+
 @media screen and (min-width: 768px) {
   .products {
     max-width: 35rem;
